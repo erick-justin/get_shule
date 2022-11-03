@@ -2,6 +2,7 @@
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:get_shule/Screens/profile_edit.dart';
 
 import '../utilities/colors.dart';
 
@@ -33,6 +34,14 @@ class ProfilePageState extends State<ProfilePage>{
 
        ),
       body: theBody(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+Navigator.push(context, MaterialPageRoute(builder: (builder)=>ProfileEditPage()));
+        },
+        backgroundColor: mainBlack,
+        child: const Icon(Icons.edit,color: Colors.white,),
+      ),
+
     ));
   }
 
@@ -76,6 +85,7 @@ class ProfilePageState extends State<ProfilePage>{
                 Text("Full name"),
 
                 TextField(
+                  enabled: false,
                   decoration: InputDecoration(
                     hintText: "Write your full name",
                      border: UnderlineInputBorder(
@@ -97,6 +107,7 @@ class ProfilePageState extends State<ProfilePage>{
                 Text("Full name"),
 
                 TextField(
+                  enabled: false,
                   decoration: InputDecoration(
                       hintText: "Write your full name",
                       border: UnderlineInputBorder(
@@ -115,9 +126,10 @@ class ProfilePageState extends State<ProfilePage>{
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
 
-                Text("Full name"),
+                Text("Primary school"),
 
                 TextField(
+                  enabled: false,
                   decoration: InputDecoration(
                       hintText: "Write your full name",
                       border: UnderlineInputBorder(
